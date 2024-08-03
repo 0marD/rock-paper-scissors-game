@@ -1,0 +1,46 @@
+@import 'mixins';
+
+.header {
+    border: .19rem solid;
+    border-radius: 1vw;
+    width: 100%;
+    max-width: 700px;
+    padding: .625rem;
+    min-width: 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include header-outline;
+
+    .title {
+        display: flex;
+        width: min-content;
+        text-transform: uppercase;
+        font-size: 1rem;
+        line-height: 1;
+        @include font-weight-700;
+    }
+
+    .score {
+        @include score-background;
+        width: 4.65rem;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: inherit;
+
+        &-legend {
+            text-transform: uppercase;
+            font-size: .6rem;
+            @include score-text;
+        }
+
+        &-value {
+            @include dark-text;
+            @include font-weight-700;
+            font-size: 1.8rem;
+        }
+    }
+}
